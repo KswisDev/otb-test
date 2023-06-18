@@ -10,7 +10,7 @@ function ProductCard({ product, index }) {
   if (!product) return null;
   return (
     <div data-testid={`product-${index}`}>
-      <img src="" alt="" />
+      <img src={`/images/${product.imageName}`} alt="" />
       <button
         onClick={() => setShowOverview(!showOverview)}
         data-testid={"overview-button"}

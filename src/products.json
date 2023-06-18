@@ -1,5 +1,6 @@
 [
   {
+    "imageName": "hotel-image-1.png",
     "price": 1136.5,
     "adults": 2,
     "children": 2,
@@ -13,6 +14,7 @@
     "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ostendit pedes et pectus. Sed quae tandem ista ratio est? Facete M. Quamquam te quidem video minime esse deterritum. Bork Duo Reges: constructio interrete. Quis hoc dicit? Age sane, inquam."
   },
   {
+    "imageName": "hotel-image-2.png",
     "price": 696.8,
     "adults": 2,
     "children": 1,
@@ -26,6 +28,7 @@
     "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ostendit pedes et pectus. Sed quae tandem ista ratio est? Facete M. Quamquam te quidem video minime esse deterritum. Bork Duo Reges: constructio interrete. Quis hoc dicit? Age sane, inquam."
   },
   {
+    "imageName": "hotel-image-3.png",
     "price": 499.99,
     "adults": 2,
     "children": 2,
