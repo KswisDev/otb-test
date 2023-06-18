@@ -21,7 +21,9 @@ function ProductDisplay({ products }) {
         setProductsToDisplay(sortByProperty(productsToDisplay, "hotel"));
         break;
       case "rating":
-        setProductsToDisplay(sortByProperty(productsToDisplay, "rating", true));
+        setProductsToDisplay(
+          sortByProperty(productsToDisplay, "rating", true, "desc")
+        );
         break;
       default:
         setProductsToDisplay(sortByProperty(productsToDisplay, "price", true));

@@ -1,4 +1,9 @@
-const sortByProperty = (products, properyToSortBy, isNumber = false) => {
+const sortByProperty = (
+  products,
+  properyToSortBy,
+  isNumber = false,
+  sortOrder = "asc"
+) => {
   return [...products].sort((a, b) => {
     const propertyA = isNumber
       ? a[properyToSortBy]
@@ -7,13 +12,14 @@ const sortByProperty = (products, properyToSortBy, isNumber = false) => {
       ? b[properyToSortBy]
       : b[properyToSortBy].toLowerCase();
 
+    let comparison = 0;
     if (propertyA < propertyB) {
-      return -1;
+      comparison = -1;
     }
     if (propertyA > propertyB) {
-      return 1;
+      comparison = 1;
     }
-    return 0;
+    return sortOrder === "desc" ? comparison * -1 : comparison;
   });
 };
 
