@@ -1,8 +1,26 @@
 import ProductCard from "./productCard";
 import { useState } from "react";
 import { sortByProperty } from "../utilities/sortFunctions";
+import styled from "styled-components";
 
 const hasProducts = (products) => products && products.length > 0;
+
+const FlexBox = styled.div`
+  display: flex;
+  padding: 2rem;
+`;
+
+const ProductsContainer = styled.div`
+  display: flex;
+  flex-grow: 1;
+  text-align: center;
+  padding: 1rem;
+  flex-direction: column;
+`;
+
+const SortMenu = styled.menu`
+  min-width: 200px;
+`;
 
 function ProductDisplay({ products }) {
   const [selectedSort, setSelectedSort] = useState("price");
@@ -32,8 +50,8 @@ function ProductDisplay({ products }) {
   };
 
   return (
-    <div>
-      <menu>
+    <FlexBox>
+      <SortMenu>
         <li>
           <label>
             <input
@@ -70,11 +88,13 @@ function ProductDisplay({ products }) {
             sort by star rating
           </label>
         </li>
-      </menu>
-      {productsToDisplay.map((product, index) => (
-        <ProductCard product={product} index={index} key={product.hotel} />
-      ))}
-    </div>
+      </SortMenu>
+      <ProductsContainer>
+        {productsToDisplay.map((product, index) => (
+          <ProductCard product={product} index={index} key={product.hotel} />
+        ))}
+      </ProductsContainer>
+    </FlexBox>
   );
 }
 
