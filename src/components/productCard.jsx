@@ -1,7 +1,30 @@
+import styled from "styled-components";
+import { useState } from "react";
+
+const ToggleText = styled.p`
+  display: ${(props) => (props.showOverview ? "block" : "none")};
+`;
+
 function ProductCard({ product, index }) {
+  const [showOverview, setShowOverview] = useState(false);
+  if (!product) return null;
   return (
     <div data-testid={`product-${index}`}>
       <img src="" alt="" />
+      <button
+        onClick={() => setShowOverview(!showOverview)}
+        data-testid={"overview-button"}
+      >
+        {showOverview ? (
+          <>
+            <strong>Read less</strong> about this hotel
+          </>
+        ) : (
+          <>
+            <strong>Read more</strong> about this hotel
+          </>
+        )}
+      </button>
       <div>
         <h2>{product.hotel}</h2>
         <h3>{product.location}</h3>
@@ -23,7 +46,7 @@ function ProductCard({ product, index }) {
       </div>
       <div>
         <h4>Overview</h4>
-        <p>{product.overview}</p>
+        <ToggleText showOverview={showOverview}>{product.overview}</ToggleText>
       </div>
     </div>
   );
