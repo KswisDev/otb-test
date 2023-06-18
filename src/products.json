@@ -11,5 +11,18 @@
     "location": "Costa Adeje, Tenerife",
     "rating": 5,
     "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ostendit pedes et pectus. Sed quae tandem ista ratio est? Facete M. Quamquam te quidem video minime esse deterritum. Bork Duo Reges: constructio interrete. Quis hoc dicit? Age sane, inquam."
+  },
+  {
+    "price": 696.8,
+    "adults": 2,
+    "children": 1,
+    "infant": 0,
+    "startDate": "2019-05-27",
+    "duration": "7",
+    "depatureAirport": "Liverpool",
+    "hotel": "Aguamarina Golf Hotel",
+    "location": "Costa Adeje, Tenerife",
+    "rating": 4,
+    "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ostendit pedes et pectus. Sed quae tandem ista ratio est? Facete M. Quamquam te quidem video minime esse deterritum. Bork Duo Reges: constructio interrete. Quis hoc dicit? Age sane, inquam."
   }
 ]

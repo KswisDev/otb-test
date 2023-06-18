@@ -2,11 +2,26 @@ function ProductDisplay({ products }) {
   return (
     <div>
       <menu>
-        <li>sort alphabetically</li>
-        <li>sort by price</li>
-        <li>sort by star rating</li>
+        <li>
+          <label>
+            <input type="radio" name="sort" value="alphabetically" />
+            sort alphabetically
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="sort" value="price" />
+            sort by price
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="sort" value="rating" />
+            sort by star rating
+          </label>
+        </li>
       </menu>
-      <div>
+      <div data-testid="product-1">
         <h2>{products[0].hotel}</h2>
       </div>
     </div>
