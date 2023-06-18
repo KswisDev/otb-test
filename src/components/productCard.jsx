@@ -19,6 +19,7 @@ function ProductCard({ product, index }) {
           departing from <strong>{product.depatureAirport}</strong>
         </p>
         <button>Book now {product.price}</button>
+        <p>{product.price}</p>
       </div>
       <div>
         <h4>Overview</h4>

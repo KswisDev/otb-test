@@ -23,7 +23,7 @@ test("does not render if no products", () => {
 test("renders products sorted by price by default", () => {
   render(<ProductDisplay products={products} />);
   const { getByText } = within(screen.getByTestId("product-0"));
-  expect(getByText("£1,136.50")).toBeInTheDocument();
+  expect(getByText("499.99")).toBeInTheDocument();
   const radioInput = screen.getByLabelText("sort by price");
   expect(radioInput).toBeChecked();
 });
@@ -36,4 +36,14 @@ test("should allow user to order products alphabetically", () => {
   expect(radioInput).toBeChecked();
   const { getByText } = within(screen.getByTestId("product-0"));
   expect(getByText("Aguamarina Golf Hotel")).toBeInTheDocument();
+});
+
+test("should allow user to order products by rating", () => {
+  render(<ProductDisplay products={products} />);
+  const radioInput = screen.getByLabelText("sort by star rating");
+  expect(radioInput).not.toBeChecked();
+  fireEvent.click(radioInput);
+  expect(radioInput).toBeChecked();
+  const { getByText } = within(screen.getByTestId("product-0"));
+  expect(getByText("Iberostar Grand Salome")).toBeInTheDocument();
 });

@@ -24,5 +24,18 @@
     "location": "Costa Adeje, Tenerife",
     "rating": 4,
     "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ostendit pedes et pectus. Sed quae tandem ista ratio est? Facete M. Quamquam te quidem video minime esse deterritum. Bork Duo Reges: constructio interrete. Quis hoc dicit? Age sane, inquam."
+  },
+  {
+    "price": 499.99,
+    "adults": 2,
+    "children": 2,
+    "infant": 0,
+    "startDate": "2019-07-03",
+    "duration": "7",
+    "depatureAirport": "Manchester",
+    "hotel": "Las Piramides Resort",
+    "location": "Costa Adeje, Tenerife",
+    "rating": 3,
+    "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ostendit pedes et pectus. Sed quae tandem ista ratio est? Facete M. Quamquam te quidem video minime esse deterritum. Bork Duo Reges: constructio interrete. Quis hoc dicit? Age sane, inquam."
   }
 ]
