@@ -6,12 +6,13 @@ test("should be able to toggle overview text", () => {
   const product = { ...products[0], overview: "test subject" };
   render(<ProductCard product={product} />);
   let hiddenText = screen.queryByText(/test subject/i);
-  expect(hiddenText).not.toBeVisible();
+  expect(hiddenText).not.toBeInTheDocument();
   expect(screen.getByText(/Read more/i)).toBeInTheDocument();
 
   fireEvent.click(screen.getByTestId("overview-button"));
 
-  expect(hiddenText).toBeVisible();
+  hiddenText = screen.queryByText(/test subject/i);
+  expect(hiddenText).toBeInTheDocument();
   expect(screen.getByText(/Read less/i)).toBeInTheDocument();
 });
 
