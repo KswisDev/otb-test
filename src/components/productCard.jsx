@@ -1,44 +1,23 @@
-import styled from "styled-components";
 import { useState } from "react";
-
-const ProductWrapper = styled.div`
-  display: flex;
-`;
-
-const OverviewWrapper = styled.section`
-  text-align: left;
-  margin-top: -22px;
-`;
-
-const InfoWrapper = styled.section`
-  text-align: left;
-  padding: 1rem;
-  p {
-    font-size: 12px;
-    line-height: 20px;
-    margin: 0;
-  }
-
-  h2 {
-    margin-top: 0;
-    margin-bottom: 14px;
-    font-size: 20px;
-  }
-
-  h3 {
-    margin-top: 0;
-    margin-bottom: 14px;
-    font-size: 16px;
-  }
-`;
-
-const OuterWrapper = styled.div`
-  padding: 1rem;
-`;
+import {
+  ProductWrapper,
+  OverviewWrapper,
+  InfoWrapper,
+  OuterWrapper,
+  BookCTA,
+  UKPound,
+  StarIcon,
+} from "./productCard.styles";
 
 function ProductCard({ product, index }) {
   const [showOverview, setShowOverview] = useState(false);
   if (!product) return null;
+
+  const stars = [];
+  for (let i = 0; i < product.rating; i++) {
+    stars.push(<StarIcon key={`star${i}`} />);
+  }
+
   return (
     <OuterWrapper>
       <ProductWrapper data-testid={`product-${index}`}>
@@ -46,7 +25,7 @@ function ProductCard({ product, index }) {
         <InfoWrapper>
           <h2>{product.hotel}</h2>
           <h3>{product.location}</h3>
-          <p>{product.rating}</p>
+          <p>{stars}</p>
           <p>
             <strong>{product.adults}</strong> Adults,{" "}
             <strong>{product.children}</strong> children{" "}
@@ -59,7 +38,8 @@ function ProductCard({ product, index }) {
           <p>
             departing from <strong>{product.depatureAirport}</strong>
           </p>
-          <button>Book now {product.price}</button>
+          <br />
+          <BookCTA>Book now {UKPound.format(product.price)}</BookCTA>
           <p>{product.price}</p>
         </InfoWrapper>
       </ProductWrapper>
