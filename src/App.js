@@ -3,7 +3,7 @@ import products from "./products.json";
 
 function App() {
   return (
-    <div>
+    <div style={{ backgroundImage: "url('/images/background.png')" }}>
       <ProductDisplay products={products} />
     </div>
   );
