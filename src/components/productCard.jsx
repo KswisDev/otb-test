@@ -7,6 +7,7 @@ import {
   BookCTA,
   UKPound,
   StarIcon,
+  OverviewButton,
 } from "./productCard.styles";
 
 function ProductCard({ product, index }) {
@@ -45,7 +46,7 @@ function ProductCard({ product, index }) {
         </InfoWrapper>
       </ProductWrapper>
       <OverviewWrapper>
-        <button
+        <OverviewButton
           onClick={() => setShowOverview(!showOverview)}
           data-testid={"overview-button"}
         >
@@ -58,7 +59,7 @@ function ProductCard({ product, index }) {
               <strong>Read more</strong> about this hotel
             </>
           )}
-        </button>
+        </OverviewButton>
         {showOverview && (
           <>
             <h4>Overview</h4>

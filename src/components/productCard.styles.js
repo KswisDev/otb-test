@@ -8,7 +8,7 @@ const ProductWrapper = styled.div`
 
 const OverviewWrapper = styled.section`
   text-align: left;
-  margin-top: -22px;
+  margin-top: -32px;
   background: white;
 `;
 
@@ -41,7 +41,7 @@ const OuterWrapper = styled.div`
 `;
 
 const BookCTA = styled.button`
-  background-color: #fedc07;
+  background-color: ${(props) => props.theme.yellow};
   border: none;
   padding: 1rem 32px;
   text-align: center;
@@ -50,7 +50,7 @@ const BookCTA = styled.button`
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
-  color: #17317f;
+  color: ${(props) => props.theme.blue};
 `;
 
 const UKPound = new Intl.NumberFormat("en-GB", {
@@ -59,7 +59,18 @@ const UKPound = new Intl.NumberFormat("en-GB", {
 });
 
 const StarIcon = styled(FaStar)`
-  color: #fedc07;
+  color: ${(props) => props.theme.yellow};
+`;
+
+const OverviewButton = styled.button`
+  background-color: white;
+  border: none;
+  padding: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  color: ${(props) => props.theme.blue};
 `;
 
 export {
@@ -70,4 +81,5 @@ export {
   BookCTA,
   UKPound,
   StarIcon,
+  OverviewButton,
 };

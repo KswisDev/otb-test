@@ -26,7 +26,7 @@ const SortMenu = styled.menu`
     font-size: 16px;
     width: 100%;
     border-bottom: solid #b7bfd8 2px;
-    color: #17317f;
+    color: ${(props) => props.theme.blue};
 
     span {
       margin-right: 20px;
@@ -42,7 +42,7 @@ const SortMenu = styled.menu`
   }
 
   input[type="radio"]:checked + label {
-    background-color: #17317f;
+    background-color: ${(props) => props.theme.blue};
     color: white;
   }
 `;
