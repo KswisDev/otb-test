@@ -2,6 +2,7 @@ import ProductCard from "./productCard";
 import { useState } from "react";
 import { sortByProperty } from "../utilities/sortFunctions";
 import styled from "styled-components";
+import { FaSortAlphaDown, FaPoundSign, FaStar } from "react-icons/fa";
 
 const hasProducts = (products) => products && products.length > 0;
 
@@ -11,15 +12,39 @@ const FlexBox = styled.div`
 `;
 
 const ProductsContainer = styled.div`
-  display: flex;
-  flex-grow: 1;
-  text-align: center;
   padding: 1rem;
-  flex-direction: column;
 `;
 
 const SortMenu = styled.menu`
   min-width: 200px;
+  list-style-type: none;
+
+  label {
+    display: inline-block;
+    background-color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+    border-bottom: solid #b7bfd8 2px;
+    color: #17317f;
+
+    span {
+      margin-right: 20px;
+    }
+
+    svg {
+      float: right;
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"]:checked + label {
+    background-color: #17317f;
+    color: white;
+  }
 `;
 
 function ProductDisplay({ products }) {
@@ -53,39 +78,51 @@ function ProductDisplay({ products }) {
     <FlexBox>
       <SortMenu>
         <li>
-          <label>
-            <input
-              type="radio"
-              name="sort"
-              value="alphabetically"
-              checked={selectedSort === "alphabetically"}
-              onChange={handleOptionChange}
-            />
-            sort alphabetically
+          <input
+            id="alphabetically-radio"
+            type="radio"
+            name="sort"
+            value="alphabetically"
+            checked={selectedSort === "alphabetically"}
+            onChange={handleOptionChange}
+          />
+          <label htmlFor="alphabetically-radio">
+            <span>
+              sort <strong>alphabetically</strong>
+            </span>
+            <FaSortAlphaDown />
           </label>
         </li>
         <li>
-          <label>
-            <input
-              type="radio"
-              name="sort"
-              value="price"
-              checked={selectedSort === "price"}
-              onChange={handleOptionChange}
-            />
-            sort by price
+          <input
+            type="radio"
+            name="sort"
+            value="price"
+            checked={selectedSort === "price"}
+            onChange={handleOptionChange}
+            id="price-radio"
+          />
+          <label htmlFor="price-radio">
+            <span>
+              sort by <strong>price</strong>
+            </span>
+            <FaPoundSign />
           </label>
         </li>
         <li>
-          <label>
-            <input
-              type="radio"
-              name="sort"
-              value="rating"
-              checked={selectedSort === "rating"}
-              onChange={handleOptionChange}
-            />
-            sort by star rating
+          <input
+            type="radio"
+            name="sort"
+            value="rating"
+            checked={selectedSort === "rating"}
+            onChange={handleOptionChange}
+            id="rating-radio"
+          />
+          <label htmlFor="rating-radio">
+            <span>
+              sort by <strong>star rating</strong>
+            </span>
+            <FaStar />
           </label>
         </li>
       </SortMenu>

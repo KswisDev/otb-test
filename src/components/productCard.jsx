@@ -39,8 +39,9 @@ function ProductCard({ product, index }) {
             departing from <strong>{product.depatureAirport}</strong>
           </p>
           <br />
-          <BookCTA>Book now {UKPound.format(product.price)}</BookCTA>
-          <p>{product.price}</p>
+          <BookCTA data-testid={"cta-button"}>
+            Book now {UKPound.format(product.price)}
+          </BookCTA>
         </InfoWrapper>
       </ProductWrapper>
       <OverviewWrapper>

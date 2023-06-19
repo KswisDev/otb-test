@@ -4,13 +4,13 @@ import products from "../products.json";
 
 test("renders sort menu", () => {
   render(<ProductDisplay products={products} />);
-  let buttonElement = screen.getByText(/sort alphabetically/i);
+  let buttonElement = screen.getByText(/alphabetically/i);
   expect(buttonElement).toBeInTheDocument();
 
-  buttonElement = screen.getByText(/sort by price/i);
+  buttonElement = screen.getByText(/price/i);
   expect(buttonElement).toBeInTheDocument();
 
-  buttonElement = screen.getByText(/sort by star rating/i);
+  buttonElement = screen.getByText(/star rating/i);
   expect(buttonElement).toBeInTheDocument();
 });
 
@@ -23,7 +23,7 @@ test("does not render if no products", () => {
 test("renders products sorted by price by default", () => {
   render(<ProductDisplay products={products} />);
   const { getByText } = within(screen.getByTestId("product-0"));
-  expect(getByText("499.99")).toBeInTheDocument();
+  expect(getByText(/499.99/i)).toBeInTheDocument();
   const radioInput = screen.getByLabelText("sort by price");
   expect(radioInput).toBeChecked();
 });
